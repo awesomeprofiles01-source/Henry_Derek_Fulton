@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Henry Fulton | Heavy Vehicle Driver & Mechanic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Henry Derek Fulton - Experienced Heavy Vehicle Driver & Mechanic with 25+ years in transport, logistics, and mechanical maintenance. Code 14 EC licence with PDP.">
+  <meta name="keywords" content="Henry Fulton, Heavy Vehicle Driver, Mechanic, Code 14, Logistics, Transport, Pretoria, Fleet Maintenance, PDP">
+  <meta name="author" content="Henry Derek Fulton">
+
+  <meta property="og:title" content="Henry Fulton | Heavy Vehicle Driver & Mechanic">
+  <meta property="og:description" content="25+ years keeping wheels turning and engines running. Code 14 EC | PDP | Pretoria">
+  <meta property="og:type" content="website">
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --steel:    #1c1f22;
+      --iron:     #2a2e33;
+      --plate:    #3a3f47;
+      --rust:     #c0440a;
+      --rust-b:   #e05a1a;
+      --amber:    #f5a623;
+      --chalk:    #e8e4dc;
+      --mist:     #a8a49c;
+      --white:    #ffffff;
+      --border:   rgba(255,255,255,0.08);
+      --glow:     rgba(192,68,10,0.5);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--steel);
+      color: var(--chalk);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%231c1f22'/%3E%3Crect x='0' y='0' width='1' height='1' fill='%2322252a' opacity='0.6'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%2322252a' opacity='0.4'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: var(--steel);
+      border-bottom: 3px solid var(--rust);
+      padding: 14px 32px;
+      display: flex; justify-content: center; gap: 32px;
+      z-index: 1000;
+    }
+    nav a {
+      font-family: 'Oswald', sans-serif;
+      font-size: .85rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--mist); text-decoration: none;
+      transition: color .25s;
+    }
+    nav a:hover { color: var(--rust-b); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      padding: 140px 24px 80px;
+      text-align: center;
+      background:
+        linear-gradient(to bottom, rgba(28,31,34,0) 60%, var(--steel) 100%),
+        repeating-linear-gradient(
+          -45deg,
+          transparent, transparent 20px,
+          rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px
+        );
+    }
+
+    /* diagonal accent bar */
+    .hero::before {
+      content: '';
+      position: absolute; top: 60px; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--rust), var(--amber), var(--rust), transparent);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-size: .75rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--amber);
+      border: 1px solid var(--amber);
+      padding: 4px 16px; border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero-photo {
+      width: 150px; height: 150px; border-radius: 50%;
+      border: 4px solid var(--rust);
+      box-shadow: 0 0 0 6px rgba(192,68,10,0.2), 0 0 40px rgba(192,68,10,0.3);
+      margin: 0 auto 24px;
+      display: block;
+      object-fit: cover;
+      background: var(--plate);
+    }
+
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span { color: var(--rust-b); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--mist);
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+
+    .hero-stats {
+      display: flex; justify-content: center; gap: 48px;
+      margin-bottom: 36px; flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem; font-weight: 700;
+      color: var(--rust-b);
+      display: block;
+    }
+    .stat-label {
+      font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--mist);
+    }
+
+    .btn-group { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      font-family: 'Oswald', sans-serif;
+      font-size: .9rem; letter-spacing: .1em; text-transform: uppercase;
+      padding: 13px 28px; border-radius: 3px;
+      text-decoration: none; display: inline-block;
+      transition: all .25s;
+    }
+    .btn-primary {
+      background: var(--rust); color: var(--white);
+      border: 2px solid var(--rust);
+    }
+    .btn-primary:hover { background: var(--rust-b); border-color: var(--rust-b); transform: translateY(-2px); box-shadow: 0 6px 20px var(--glow); }
+    .btn-outline {
+      background: transparent; color: var(--chalk);
+      border: 2px solid var(--plate);
+    }
+    .btn-outline:hover { border-color: var(--rust-b); color: var(--rust-b); }
+
+    /* ── VIDEO ── */
+    .video-wrap {
+      margin-top: 40px;
+      display: inline-block;
+      border: 3px solid var(--plate);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    }
+    .video-wrap video { display: block; max-width: 360px; width: 100%; }
+    .video-controls { display: flex; gap: 8px; padding: 10px 12px; background: var(--iron); }
+    .video-controls button {
+      font-family: 'Oswald', sans-serif;
+      font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+      background: var(--plate); color: var(--chalk);
+      border: none; padding: 7px 14px; border-radius: 2px; cursor: pointer;
+      transition: background .2s;
+    }
+    .video-controls button:hover { background: var(--rust); }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 24px; max-width: 960px; margin: auto; position: relative; z-index: 1; }
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: .72rem; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--rust-b); margin-bottom: 6px;
+    }
+    h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 600; text-transform: uppercase; letter-spacing: .05em;
+      color: var(--white);
+      border-left: 5px solid var(--rust);
+      padding-left: 16px; margin-bottom: 36px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, var(--rust), transparent);
+      max-width: 960px; margin: 0 auto;
+    }
+
+    /* ── ABOUT ── */
+    .about-text {
+      font-size: 1.08rem; color: var(--chalk);
+      max-width: 720px; border-left: 2px solid var(--plate); padding-left: 20px;
+    }
+    .detail-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin-top: 28px;
+    }
+    .detail-item {
+      background: var(--iron); border: 1px solid var(--border);
+      border-radius: 4px; padding: 16px 20px;
+    }
+    .detail-item strong {
+      font-family: 'Oswald', sans-serif;
+      font-size: .78rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--rust-b); display: block; margin-bottom: 4px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+    .skill-card {
+      background: var(--iron); border: 1px solid var(--border);
+      border-top: 3px solid var(--rust);
+      border-radius: 4px; padding: 24px 20px; text-align: center;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .skill-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(192,68,10,0.3); }
+    .skill-icon { font-size: 2rem; margin-bottom: 10px; }
+    .skill-name { font-family: 'Oswald', sans-serif; font-size: .9rem; letter-spacing: .08em; text-transform: uppercase; color: var(--chalk); }
+
+    /* ── EXPERIENCE ── */
+    .exp-timeline { position: relative; padding-left: 28px; }
+    .exp-timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: linear-gradient(to bottom, var(--rust), transparent);
+    }
+    .exp-card {
+      position: relative; margin-bottom: 36px;
+      background: var(--iron); border: 1px solid var(--border);
+      border-radius: 4px; padding: 28px;
+      transition: border-color .4s, box-shadow .4s;
+    }
+    .exp-card::before {
+      content: '';
+      position: absolute; left: -36px; top: 28px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--rust); border: 3px solid var(--steel);
+      box-shadow: 0 0 8px var(--glow);
+    }
+    .exp-card.active { border-color: var(--rust); box-shadow: 0 0 16px rgba(192,68,10,0.25); }
+    .exp-card h4 {
+      font-family: 'Oswald', sans-serif; font-size: 1.05rem;
+      text-transform: uppercase; letter-spacing: .06em;
+      color: var(--white); margin-bottom: 4px;
+    }
+    .exp-card .period {
+      font-family: 'Oswald', sans-serif; font-size: .8rem;
+      color: var(--amber); letter-spacing: .1em; margin-bottom: 12px;
+    }
+    .exp-card ul { padding-left: 18px; }
+    .exp-card li { color: var(--mist); font-size: .95rem; margin-bottom: 6px; }
+
+    /* ── Q&A ── */
+    .qa-card {
+      background: var(--iron); border: 1px solid var(--border);
+      border-radius: 4px; padding: 28px; margin-bottom: 20px;
+      border-left: 4px solid var(--plate);
+      transition: border-left-color .4s, box-shadow .4s;
+    }
+    .qa-card.active { border-left-color: var(--rust-b); box-shadow: 0 0 14px rgba(192,68,10,0.2); }
+    .qa-question {
+      font-family: 'Oswald', sans-serif; font-size: 1rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--rust-b); margin-bottom: 10px;
+    }
+    .qa-question::before { content: 'Q — '; color: var(--amber); }
+    .qa-answer { color: var(--chalk); font-size: .95rem; }
+
+    /* ── CERTS ── */
+    .cert-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+    .cert-badge {
+      font-family: 'Oswald', sans-serif;
+      font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+      background: var(--iron); border: 1px solid var(--plate);
+      color: var(--chalk); padding: 10px 18px; border-radius: 3px;
+      transition: all .25s;
+    }
+    .cert-badge:hover { border-color: var(--rust-b); color: var(--rust-b); box-shadow: 0 0 10px rgba(192,68,10,0.3); }
+
+    /* ── CONTACT ── */
+    .contact-form { display: flex; flex-direction: column; gap: 16px; max-width: 580px; margin: auto; }
+    .contact-form label { font-family: 'Oswald', sans-serif; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--mist); }
+    .contact-form input, .contact-form textarea {
+      margin-top: 6px; padding: 12px 16px;
+      background: var(--iron); color: var(--chalk);
+      border: 1px solid var(--plate); border-radius: 3px;
+      font-family: 'Source Serif 4', serif; font-size: .95rem;
+      width: 100%;
+      transition: border-color .25s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none; border-color: var(--rust-b);
+      box-shadow: 0 0 8px rgba(192,68,10,0.3);
+    }
+
+    /* ── TOP BTN ── */
+    #topBtn {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 46px; height: 46px; border-radius: 3px;
+      background: var(--rust); color: var(--white);
+      font-size: 1.2rem; border: none; cursor: pointer;
+      box-shadow: 0 4px 16px var(--glow); z-index: 1000;
+      font-family: 'Oswald', sans-serif;
+      transition: transform .25s;
+    }
+    #topBtn:hover { transform: translateY(-3px); }
+
+    /* ── FADE IN ── */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      nav { gap: 16px; padding: 12px 16px; flex-wrap: wrap; }
+      .hero-stats { gap: 28px; }
+      .exp-timeline { padding-left: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#qa">Q&A</a>
+    <a href="#certifications">Licences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero">
+    <div class="hero-badge">Available for Work · Pretoria, Gauteng</div>
+
+    <img src="assets/profile.jpg" alt="Henry Fulton" class="hero-photo">
+
+    <h1>Henry <span>Fulton</span></h1>
+    <p class="hero-sub">Heavy Vehicle Driver &amp; Mechanic — Keeping Wheels Turning Since 1993</p>
+
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">25+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat"><span class="stat-num">0</span><span class="stat-label">Incidents on Record</span></div>
+      <div class="stat"><span class="stat-num">C14</span><span class="stat-label">EC Licence + PDP</span></div>
+    </div>
+
+    <div class="btn-group">
+      <a href="assets/HenryFultonCV.pdf" class="btn btn-primary" download>Download CV</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+
+    <div class="video-wrap" style="margin-top:40px;">
+      <video id="introVideo" width="360">
+        <source src="assets/intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-controls">
+        <button onclick="playVideo()">▶ Play</button>
+        <button onclick="pauseVideo()">⏸ Pause</button>
+        <button onclick="stopVideo()">⏹ Stop</button>
+        <button onclick="toggleMute()">🔇 Mute</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="fade-in">
+    <p class="section-label">Who I Am</p>
+    <h2>About Me</h2>
+    <p class="about-text">
+      Dedicated and versatile professional with over 25 years of hands-on experience in transport, logistics, mechanical maintenance, and team supervision. I hold a Code 14 EC licence for heavy articulated vehicles with a valid PDP, and I bring a strong mechanical background — from fleet servicing to full diagnostics and repair. Whether I'm behind the wheel of a Scania on a long haul or diagnosing a fault on a farm tractor, I show up reliable, safety-conscious, and ready to get the job done right.
+    </p>
+    <div class="detail-grid">
+      <div class="detail-item"><strong>Location</strong>Pretoria, Gauteng</div>
+      <div class="detail-item"><strong>Licence</strong>Code 14 EC (Heavy Articulated) + PDP</div>
+      <div class="detail-item"><strong>Languages</strong>English (Home), Afrikaans (Fluent)</div>
+      <div class="detail-item"><strong>Health</strong>Excellent</div>
+      <div class="detail-item"><strong>Date of Birth</strong>31 January 1964</div>
+      <div class="detail-item"><strong>Availability</strong>Immediate</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="fade-in">
+    <p class="section-label">What I Bring</p>
+    <h2>Core Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><div class="skill-icon">🚛</div><div class="skill-name">Heavy Vehicle Operation</div></div>
+      <div class="skill-card"><div class="skill-icon">🔧</div><div class="skill-name">Mechanical Diagnostics & Repair</div></div>
+      <div class="skill-card"><div class="skill-icon">📦</div><div class="skill-name">Logistics & Delivery</div></div>
+      <div class="skill-card"><div class="skill-icon">🛠️</div><div class="skill-name">Fleet Maintenance</div></div>
+      <div class="skill-card"><div class="skill-icon">👷</div><div class="skill-name">Team Leadership</div></div>
+      <div class="skill-card"><div class="skill-icon">⚠️</div><div class="skill-name">Safety & Compliance</div></div>
+      <div class="skill-card"><div class="skill-icon">🌾</div><div class="skill-name">Agricultural Machinery</div></div>
+      <div class="skill-card"><div class="skill-icon">🏗️</div><div class="skill-name">Property & Site Maintenance</div></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="fade-in">
+    <p class="section-label">Track Record</p>
+    <h2>Experience</h2>
+    <div class="exp-timeline">
+
+      <div class="exp-card">
+        <h4>Driver / Mechanic — K Carrim Builders Hardware</h4>
+        <div class="period">Pretoria · 2013 – 2022</div>
+        <ul>
+          <li>Operated heavy vehicles for stock deliveries across multiple branches.</li>
+          <li>Maintained fleet vehicles, reducing downtime through proactive servicing.</li>
+          <li>Ensured secure transport of varied loads with a zero-incident record.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <h4>Farm Foreman / Maintenance — Oppipass</h4>
+        <div class="period">2012</div>
+        <ul>
+          <li>Oversaw property and equipment maintenance across the farm operation.</li>
+          <li>Directed daily operations and supervised workers on site.</li>
+          <li>Applied mechanical expertise to keep farm machinery in working order.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <h4>Maintenance Manager — Tods Hotel</h4>
+        <div class="period">2010 – 2012</div>
+        <ul>
+          <li>Managed site-wide maintenance programmes and preventive schedules.</li>
+          <li>Coordinated repairs and vendor interactions to minimise downtime.</li>
+          <li>Ensured all facilities remained safe, operational, and in top condition.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <h4>Self-Employed Mechanic & Sales — Chinoi</h4>
+        <div class="period">2007 – 2010</div>
+        <ul>
+          <li>Serviced and repaired farm tractors and agricultural implements.</li>
+          <li>Built strong repeat-client relationships through reliable technical support.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <h4>Long-Distance Driver & Mechanic — VDS Vehicle Delivery Service</h4>
+        <div class="period">1993 – 2007</div>
+        <ul>
+          <li>Operated Mercedes and Scania trucks for regional long-distance deliveries.</li>
+          <li>Assisted with mechanical diagnostics and preventive maintenance on fleet.</li>
+          <li>Maintained an impeccable safety and punctuality record over 14 years.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== Q&A ===== -->
+  <section id="qa" class="fade-in">
+    <p class="section-label">Getting to Know Me</p>
+    <h2>HR Q&amp;A</h2>
+
+    <div class="qa-card">
+      <div class="qa-question">How do you ensure safety on the road?</div>
+      <div class="qa-answer">Safety is not a checklist — it's a mindset. With 14 years of long-distance driving and zero incidents across my career, I pre-check every vehicle before a trip, manage fatigue proactively, and never compromise a schedule at the expense of road safety.</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">What sets you apart as a driver-mechanic combination?</div>
+      <div class="qa-answer">Most drivers call a mechanic. I am the mechanic. When something sounds wrong on a long haul, I can diagnose it on the spot, often preventing a breakdown before it happens. That saves employers time, money, and frustration.</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">How do you handle pressure or unexpected breakdowns?</div>
+      <div class="qa-answer">Calmly and practically. Years of working in remote or fast-paced environments taught me to assess the situation first, use what's available, and communicate clearly to those depending on the delivery. Panic doesn't fix engines — method does.</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">You've worked across very different industries. How do you adapt?</div>
+      <div class="qa-answer">Transport, hospitality, agriculture — the environments change but the fundamentals don't: show up reliable, maintain the equipment, respect the team, and deliver results. I listen first, learn the context, then apply what I know.</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">What motivates you in your work?</div>
+      <div class="qa-answer">I take genuine pride in a vehicle that runs clean, a delivery that arrives on time, and a job that needs no fixing after I've done it. Doing things properly the first time — that's my standard.</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">What are you looking for in your next role?</div>
+      <div class="qa-answer">A stable position where my experience behind the wheel and under the bonnet is genuinely valued. I'm looking to contribute reliably to a team that takes maintenance and professionalism seriously, with room to grow.</div>
+    </div>
+
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section id="certifications" class="fade-in">
+    <p class="section-label">Credentials</p>
+    <h2>Licences &amp; Training</h2>
+    <div class="cert-grid">
+      <span class="cert-badge">Code 14 EC — Heavy Articulated Vehicles</span>
+      <span class="cert-badge">Valid PDP</span>
+      <span class="cert-badge">Secondary Certificate — Sonia High School, Zimbabwe</span>
+      <span class="cert-badge">Fleet Maintenance — Practical Experience</span>
+      <span class="cert-badge">Agricultural Machinery — Tractor & Implements</span>
+      <span class="cert-badge">Safety & Compliance</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="fade-in">
+    <p class="section-label">Reach Out</p>
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mpqoakar" method="POST" class="contact-form">
+      <label>Name<input type="text" name="name" required placeholder="Your name"></label>
+      <label>Email<input type="email" name="email" required placeholder="your@email.com"></label>
+      <label>Message<textarea name="message" rows="5" required placeholder="Tell me about the opportunity..."></textarea></label>
+      <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;">Send Message</button>
+    </form>
+  </section>
+
+  <button id="topBtn" title="Back to top">↑</button>
+
+  <script>
+    // Video controls
+    const video = document.getElementById('introVideo');
+    function playVideo()   { video.play(); }
+    function pauseVideo()  { video.pause(); }
+    function stopVideo()   { video.pause(); video.currentTime = 0; }
+    function toggleMute()  { video.muted = !video.muted; }
+
+    // Intersection observer — experience cards
+    const expCards = document.querySelectorAll('.exp-card');
+    const expObs = new IntersectionObserver(entries => {
+      entries.forEach(e => e.target.classList.toggle('active', e.isIntersecting));
+    }, { threshold: 0.25 });
+    expCards.forEach(c => expObs.observe(c));
+
+    // Intersection observer — Q&A cards
+    const qaCards = document.querySelectorAll('.qa-card');
+    const qaObs = new IntersectionObserver(entries => {
+      entries.forEach(e => e.target.classList.toggle('active', e.isIntersecting));
+    }, { threshold: 0.25 });
+    qaCards.forEach(c => qaObs.observe(c));
+
+    // Fade-in sections
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const fadeObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => fadeObs.observe(el));
+
+    // Back to top
+    document.getElementById('topBtn').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
